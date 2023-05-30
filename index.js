@@ -1,69 +1,50 @@
-// 1 задача
+// let num1 = Number(prompt('Введіть перше число: '));
+// let num2 = Number(prompt('Введіть друге число: '));
 
-let min = 65;
-if (0 <= min && min <= 15) {
-    console.log('перша чверть');
-} else if (min >= 16 && min <= 30) {
-    console.log('друга чверть');
-} else if (min >= 31 && min <= 45) {
-    console.log('третя чверть');
-} else if (min >= 41 && min <= 60) {
-    console.log('четверта чверть');
-} else {
-    console.log('введи правильное время!');
+// function addTwoNumbers(num1, num2) {
+//     const result = num1 + num2;
+//     return result;
+// }
+
+// let result = addTwoNumbers(num1, num2);
+// console.log(result);
+
+// zadacha1
+
+function numberUp(num1, num2) {
+    let result;
+    if (num1 > num2) {
+        result = num1;
+    }
+    else if (num2 > num1) {
+        result = num2;
+    }
+    return result;
 }
 
-// 2 задача
+let result = numberUp(25, 10);
+console.log(result);
 
-const num1 = 23.3;
-const num2 = 24;
-if (num1 < num2) {
-    console.log(num2);
-} else {
-    console.log(num1);
+
+// zadacha2
+
+function srArefmet (num3, num4) {
+    const result1 = (num3 + num4) / 2;
+    return result1;
 }
 
-// 3 задача
+let result1 = srArefmet(7, 8);
+console.log(result1);
 
-let year = 2023;
-if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
-    console.log(year + ' високосний');
-} else {
-    console.log(year + ' невисокосний');
+//zadacha3
+
+function parneOrNeparne (num5) {
+    let result3;
+    if (num5 % 2 === 0) {
+        result3 = console.log('парне');
+    } else if (num5 % 2 !== 0) {
+        result3 = console.log('непарне');
+    }
 }
 
-// 4 задача
-
-let d1 = 3;
-let d2 = 12;
-let numb = 18;
-if (numb >= d1 && numb <= d2) {
-    console.log('в діапазоні');
-} else {
-    console.log('не в діапазоні');
-}
-
-// 5 задача
-
-let n = 30;
-let m = 15;
-let k = 33;
-if (m >= n && k >= n) {
-    console.log('Блокнотів і ручок вистачає на всіх учасників');
-} else {
-    console.log('Блокнотів і ручок не вистачає на всіх учасників');
-}
-
-// 6 задача
-
-let age = 13;
-let sale = true;;
-if (age < 6) {
-    console.log('Вхід безкоштовний');
-} else if (age >= 6 && age <= 12) {
-    console.log('Квиток коштує $10');
-} else if (age > 12 && sale === false) {
-    console.log('Квиток зі знижкою 50% для дорослих');
-} else if (age > 12 ) {
-    console.log('Квиток коштує $20');
-}
+let result3 = parneOrNeparne (7)
