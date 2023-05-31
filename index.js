@@ -1,75 +1,15 @@
-function washingFace() {
-    console.log('Washing the face');
-}
+// let iterator = 0;
 
-function breakfast() {
-    console.log('Breakfast');
-} 
+// while (iterator < 10) {
+//     if (iterator % 2 === 0) {
+//         console.log(iterator);
+//     }
+//     iterator++;
+// }
 
-function shower() {
-    console.log('Shower');
-}
+let password = 'qwerty1234';
+let pass = prompt ('Введи правильний пароль: ');
 
-function brushingTeeth() {
-    console.log('Brushing teeth');
+while (pass !== password) {
+    pass = prompt ('Невірний пароль. Спробуй ще!');
 }
-
-function goToWork() {
-    console.log('Go to work');
-}
-
-function lunch() {
-    console.log('Lunch');
-}
-
-function goToGym() {
-    console.log('Go to gym');
-}
-
-function goToHome() {
-    console.log('Go home');
-}
-
-function dinner() {
-    console.log('Dinner');
-}
-
-function educationJS() {
-    console.log('Education JS');
-}
-
-function sleep() {
-    console.log('Sleep');
-}
-  
-function todo(timeOfDay) { // Higher-order function
-    switch(timeOfDay) {
-        case 'morning': {
-            washingFace();
-            breakfast();
-            shower();
-            brushingTeeth();
-            goToWork();
-            break;
-        }
-        case 'lunch': {
-            lunch();
-            goToGym();
-            goToHome();
-            break;
-        }
-        case 'evening': { 
-            dinner();
-            educationJS();
-            sleep();
-            break;
-        }
-        default: {
-            console.log('Error! Enter a valid time of day!');
-        } 
-    }
-}
-  
-todo('morning');
-todo('lunch');
-todo('evening');
