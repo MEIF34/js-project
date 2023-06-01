@@ -1,15 +1,15 @@
-// let iterator = 0;
+function factorial(num) {
+    if (num < 0) {
+        return null;
+    }
 
-// while (iterator < 10) {
-//     if (iterator % 2 === 0) {
-//         console.log(iterator);
-//     }
-//     iterator++;
-// }
+    if (num === 0 || num === 1) {
+        return 1;
+    }
 
-let password = 'qwerty1234';
-let pass = prompt ('Введи правильний пароль: ');
-
-while (pass !== password) {
-    pass = prompt ('Невірний пароль. Спробуй ще!');
+    let result = 1;
+    for(let i = 1; i <= num; i++) {
+        result = result * i;
+    }
+    return result;
 }
