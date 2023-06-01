@@ -1,15 +1,13 @@
-function factorial(num) {
-    if (num < 0) {
-        return null;
+function Cat(name, color, breed, age) {
+    this.name = name;
+    this.color = color;
+    this.breed = breed;
+    this.age = age;
+    this.run = function() {
+        return this.name + ' is running';
     }
-
-    if (num === 0 || num === 1) {
-        return 1;
-    }
-
-    let result = 1;
-    for(let i = 1; i <= num; i++) {
-        result = result * i;
-    }
-    return result;
 }
+
+const cat1 = new Cat('Meif', 'black', 'Mei-Kun', 3);
+const cat2 = new Cat('Roxy', 'pink', 'sexy', 3);
+const cat3 = new Cat('Debik', 'blue', 'gay');
