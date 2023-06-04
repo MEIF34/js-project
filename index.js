@@ -1,11 +1,13 @@
-function greeting(user) {
-    return `Hello, ${'name' in user ? user.name : 'Anonym'}!`;
-}
-
 const user = {
     name: 'John',
+    surname: 'Doe',
+    age: 35,
+    favoriteColor: 'red',
+    avatar: 'https://...'
 }
 
-const user2 = {
-    name: 'Doe',
+console.log(`${user.name} ${user.surname} ${user.age} ${user.favoriteColor} ${user.avatar}`);
+
+for (let key in user) {
+    console.log(`${key} --- ${user[key]}`);
 }
