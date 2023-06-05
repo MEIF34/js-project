@@ -1,9 +1,9 @@
-const arr1 = ['z', 'a', 'l', 1, 2, 3, 4, 5];
-const arr2 = ['u', 'p', 'a'];
-const arr4 = ['!']
-const arr3 = arr1.concat(arr2, arr4);
+const array = [3, 6, 8, 2, 3, 5, 1];
 
-console.log(arr3);
-console.log(arr1.fill('aaa', 2, 5));
-console.log(arr3.includes('y'));
-console.log(arr3.indexOf('l'));
+function srArefm(array) {
+    let sr = 0;
+    for(let i = 0; i < array.length; i++) {
+        sr = (sr + array[i]);
+    }
+    return sr / array.length;
+}
