@@ -1,18 +1,38 @@
+const userTel1 = '380931111111';
+const userTel2 = '380932222222';
+const userTel3 = '380933333333';
+
+const userTels = {
+    1: '380931111111',
+    2: '380932222222',
+    3: '380933333333'
+}
+
+// make massiv 1
+
+const arr = [2, 4, 6, 7]
+
+// make massiv 2
+
+const arr2 = new Array(1, 2, 4, 'Oleg');
+
+//
+
 /*
 
-const user = {
-    name: 'John',
-    surname: 'Doe',
-    age: 35,
-    favoriteColor: 'red',
-    avatar: 'https://...'
+arr2[0] = 4;
+
+if(arr2.length > 3) {
+    console.log('sssssssssssssss');
+} else {
+    console.log('TTTTTTT');
 }
 
-console.log(`${user.name} ${user.surname} ${user.age} ${user.favoriteColor} ${user.avatar}`);
+console.log(arr2[3]);
 
-for (let key in user) {
-    console.log(`${key} --- ${user[key]}`);
-}
+arr2[5] = 13;
+
+console.log(arr2);
 
 */
 
@@ -20,41 +40,21 @@ for (let key in user) {
 
 /*
 
-function znachObj(obj) {
-    for (let key in obj) {
-        console.log(`'${key}' : **${obj[key]}**`);
-    }
-}
+const array = [7, 3, 5, 2];
 
-const obj = {
-    name: 'John',
-    surname: 'Doe',
-    age: 35,
-    favoriteColor: 'red',
-    avatar: 'https://...'
+for(let i = 0; i < array.length; i++) {
+    console.log(array[i]);
 }
 
 */
 
-//task2
+//task2 
 
-const departmentSalary = {
-    HR: 20000,
-    development: 1000000,
-    drive: 300,
-    assistant: 5000,
-    marketing: undefined,
-}
+const array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function srZnachZp(departmentSalary) {
-    let result = 0;
-    
-    for (let key in departmentSalary) {
-        if (typeof departmentSalary[key] === 'number') {
-            result = result + departmentSalary[key];
-        }
+for(let i = 0; i < array2.length; i++) {
+    if(array2[i] % 2 === 0) {
+        console.log(array2[i]);
     }
-
-    return result;
 }
 
