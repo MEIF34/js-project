@@ -1,3 +1,64 @@
+const array = [3, 6, 8, 2, 3, 5, 1];
+
+//join
+
+console.log(array.join('**'));
+
+//push
+
+array.push(5, 'oleg', 'irina', 4, 7);
+
+console.log(array);
+
+//pop
+
+array.pop();
+
+console.log(array);
+
+//shift
+
+array.shift();
+
+console.log(array);
+
+//unshift
+
+array.unshift(1, 'DIMAAAAA', 'LOH');
+
+console.log(array);
+
+//reverse
+
+console.log(array.reverse());
+
+//slice
+
+console.log(array.slice(2,6));
+
+const users = [
+    {
+        name: 'John',
+        lastName: 'Doe'
+    },
+    {
+        name: 'Jane',
+        lastName: 'Doe'
+    },
+    {
+        name: 'Jack',
+        lastName: 'Doe'
+    }
+]
+
+const newUsers = users.slice()
+
+newUsers[0].name = 'Jake';
+
+
+
+/*
+
 //task1
 
 function rectangle(height, width) {
@@ -59,3 +120,5 @@ function quadraticEquation(a, b, c) {
 
     return console.log('D = ' + D + ' x1 = ' + x1 + ' x2 = ' + x2);
 } 
+
+*/
