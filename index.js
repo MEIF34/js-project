@@ -42,3 +42,15 @@ function newUserObject(user) {
 const newUsersArray = users.map((item) => {
     return newUserObject(item);
 })
+
+/*
+
+const newUsersArray = users.map((item) => {
+    return {
+        fullname: `${item.name} ${item.lastName}`,
+        age: item.age,
+        email: item.email
+    }
+});
+
+*/
