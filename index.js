@@ -1,17 +1,13 @@
-const array = [5, 3, 9, 21, 5, 1, 2, 400];
+const array = [1, 5, 3, -9, 21, -5, 1, -1, -2];
 
-array.sort();
+function filterFunc(element) {
+    // if(element > 0) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
 
-console.log(array);
-
-const arrayWords = ['bbb', 'abb', 'aaa', 'aba'];
-
-arrayWords.sort();
-
-console.log(arrayWords);
-
-function compareFunction(a, b) {
-    return b - a;
+    return element > 0;
 }
 
-array.sort(compareFunction);
+const filteredArray = array.filter(filterFunc);
