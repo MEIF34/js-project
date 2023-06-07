@@ -1,56 +1,15 @@
-const users = [
-    {
-    name: 'John',
-    lastName: 'Doe',
-    age: 18,
-    email: 'meil@com'
-    },
-    {
-    name: 'Jane',
-    lastName: 'Doe',
-    age: 20,
-    email: 'meil@com'
-    },
-    {
-    name: 'Josh',
-    lastName: 'Doe',
-    age: 17,
-    email: 'meil@com'
-    },
-    {
-    name: 'Jake',
-    lastName: 'Doe',
-    age: 21,
-    email: 'meil@com'
-    },
-    {
-    name: 'Jackson',
-    lastName: 'Doe',
-    age: 17,
-    email: 'meil@com'
-    },
-]
+function sum () {
+    const arrayArgs = Array.from(arguments);
+    let sum = 0;
 
-function newUserObject(user) {
-    return {
-        fullname: `${user.name} ${user.lastName}`,
-        age: user.age,
-        email: user.email
+    for(let i = 0; i < arrayArgs.length; i++) {
+        sum = sum + arrayArgs[i];
     }
+
+    console.log(sum / arrayArgs.length);
+
+    return sum;
 }
 
-const newUsersArray = users.map((item) => {
-    return newUserObject(item);
-})
+sum(1, 2);
 
-/*
-
-const newUsersArray = users.map((item) => {
-    return {
-        fullname: `${item.name} ${item.lastName}`,
-        age: item.age,
-        email: item.email
-    }
-});
-
-*/
