@@ -1,61 +1,53 @@
-//task1
+//task1 
 
-function rectangle(height, width) {
-    const area = height * width;
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = arr1.concat(arr2);
 
-    return area;
-}
+console.log(arr3);
 
 //task2
 
-const pi = 3.14;
+const arr4 = arr1.reverse(); // from the first task
 
-function circle(diametr) {
-    const lenght = pi * diametr;
-
-    return lenght;
-}
+console.log(arr4);
 
 //task3
 
-function cylinder(heightCylinder, diametrWarp) {
-    const cylinderCapacity = pi * heightCylinder * (diametrWarp / 2) ** 2;
+const arr5 = [3, 4, 5];
 
-    return cylinderCapacity;
-}
+arr5.push(4, 8, 10);
+
+console.log(arr5);
 
 //task4
 
-function range(num1, num2) {
-    for(let i = num1; i >= num1 && i <= num2; i++) {
-        if(i % 5 === 0) {
-            console.log(i);
-        }
-    }
-}
+const strArr = ['aaa', 'bbb', 'ccc'];
+
+console.log(strArr.pop());
+
+//task5 
+
+const arr6 = ['3', 7, 10];
+
+arr6.unshift(2, 8);
+
+console.log(arr6);
 
 //task6
 
-function fizzbuzz() {
-    for(let i = 1; i <= 100; i++) {
-        if(i % 3 === 0 && i % 5 === 0) {
-            console.log('FizzBuzz');
-        } else if (i % 3 === 0) {
-            console.log('Fizz');
-        } else if (i % 5 === 0) {
-            console.log('Buzz');
-        } else {
-            console.log(i);
-        }
-    }
-}
+const arr7 = ['3', 7, 10];
 
-//task*
+arr8 = arr7.toString();
 
-function quadraticEquation(a, b, c) {
-    const D = (b ** 2) - (4 * a * c);
-    const x1 = (b + Math.sqrt(D)) / (2 * a);
-    const x2 = (b - Math.sqrt(D)) / (2 * a);
+console.log(arr8);
 
-    return console.log('D = ' + D + ' x1 = ' + x1 + ' x2 = ' + x2);
-} 
+//forEach
+
+const forEachArr = [2, 44, 11, 234, 8, 2, 4, 1];
+
+// forEachArr.forEach(Element => console.log(Element + 100));
+
+forEachArr.forEach((item, index, array) => {
+    console.log(item + 100);
+})
