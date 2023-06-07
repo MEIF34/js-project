@@ -1,15 +1,17 @@
-function sum () {
-    const arrayArgs = Array.from(arguments);
-    let sum = 0;
+const array = [5, 3, 9, 21, 5, 1, 2, 400];
 
-    for(let i = 0; i < arrayArgs.length; i++) {
-        sum = sum + arrayArgs[i];
-    }
+array.sort();
 
-    console.log(sum / arrayArgs.length);
+console.log(array);
 
-    return sum;
+const arrayWords = ['bbb', 'abb', 'aaa', 'aba'];
+
+arrayWords.sort();
+
+console.log(arrayWords);
+
+function compareFunction(a, b) {
+    return b - a;
 }
 
-sum(1, 2);
-
+array.sort(compareFunction);
