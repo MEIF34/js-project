@@ -33,23 +33,21 @@ const users = [
     },
 ]
 
-function filterFunc(elem) {
-    if(elem !== undefined) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-const newUsers = users.map(function(user) {
-    if (user.age >= 18) {
+const newUsers = users.map((user) => {
+    if(user.age >= 18) {
         return {
             fullname: `${user.name} ${user.lastName}`,
             age: user.age,
             email: user.email
         }
     }
-}).filter(filterFunc);
+}).filter((user) => {
+    if(typeof user === 'object') {
+        return true;
+    } else {
+        return false;
+    }
+})
 
 console.log(newUsers);
 
@@ -57,15 +55,13 @@ console.log(newUsers);
 
 const number = [1, 80, 41, 2, 92];
 
-function compareFunction(a, b) {
+number.sort((a, b) => {
     if (b > a) {
         return 1;
     } else {
         return -1;
     }
-}
-
-number.sort(compareFunction);
+});
 
 console.log(number);
 
@@ -73,15 +69,13 @@ console.log(number);
 
 const doubleNumbers = [27, 22, 2, 27, 45];
 
-function filterFunc2(elem) {
+const newDoubleNumbers = doubleNumbers.filter((elem) => {
     if(elem % 2 === 0) {
         return true;
     } else {
         return false;
     }
-};
-
-const newDoubleNumbers = doubleNumbers.filter(filterFunc2);
+});
 
 console.log(newDoubleNumbers);
 
@@ -89,24 +83,15 @@ console.log(newDoubleNumbers);
 
 const number2 = [24, 21, 89, 20, 13];
 
-function reducer(accumulator, elem) {
-    return accumulator + elem;
-}
-
-function filterFunc3(elem) {
-    if(elem % 2 === 0) {
-        return true;
-    } else {
-        return false;
+const sum = number2.reduce((accumulator, currentValue) => {
+    if(currentValue % 2 === 0) {
+        accumulator = accumulator + currentValue;
     }
-}
 
-const sum = number2.reduce(reducer, 0);
-const double = number2.filter(filterFunc3);
-const sumDouble = double.reduce(reducer, 0);
+    return accumulator;
+}, 0);
 
 console.log(`sum = ${sum}`);
-console.log(`sumDouble = ${sumDouble}`);
 
 // task 5
 
@@ -156,10 +141,8 @@ const catArray = [
 
 ];
 
-const newCarArray = catArray.map(function(cat) {
-    return {
-        name: cat.name
-    }
-})
+const newCatArray = catArray.map((catName) => {
+    return catName.name;
+});
 
-console.log(newCarArray);
+console.log(newCatArray);
