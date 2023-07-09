@@ -43,8 +43,34 @@ const cat = {
 
 const arr = new MyArray();
 
-arr.push(3, 5, 9, 10, 11, 2);
+// arr.push(3, 5, 9, 10, 11, 2);
 
-arr.forEach((item) => {
-    console.log(item)
-})
+// arr.forEach((item) => {
+//     console.log(item)
+// })
+
+// praktika
+
+function Stairs() {
+    this.currentStair = 0;
+}
+
+function ProtoStairs() {
+    this.up = function() {
+        this.currentStair++;
+    }
+
+    this.down = function() {
+        if (this.currentStair > 0) {
+            this.currentStair--;
+        }
+    }
+
+    this.showStair = function() {
+        return this.currentStair;
+    }
+}
+
+Stairs.prototype = new ProtoStairs;
+
+const st = new Stairs();
