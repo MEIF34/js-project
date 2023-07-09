@@ -55,24 +55,20 @@ const cat = {
     name: 'Barsik',
     color: 'red',
     age: 1,
-    test: 'test1'
 }
 
 const cat2 = {
     name: 'Murzik',
     color: 'black',
     age: 5,
-    meow: function() {
-        console.log('Meow! Meow! Meow!');
-    }
 }
 
 const catMethods = {
     run: function() {
-        console.log('Cat is running');
+        console.log(`${this.name} is running`);
     },
     meow: function() {
-        console.log('Meow!');
+        console.log(`${this.name} Meow!`);
     }
 }
 
