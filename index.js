@@ -1,76 +1,31 @@
-function MyArray() {
-    this.length = 0;
+'use strict';
+
+console.log(this); // this вказує на глобальний об'єкт Window
+
+// Контекст виконання
+
+function test() { // Function Declaration
+    console.log(this); // вказує на функцію
 }
 
-function MyProtoArray() {
-    this.push = function() {     
-        for(let i = 0; i < arguments.length; i++) {
-            this[this.length] = arguments[i];
-            this.length++;
-        }
+test();
 
-        return this.length;
-    },
-    this.pop = function() {
-        if(this.length > 0) {
-            let lastItem = this[this.length - 1];
+const test2 = function() { // Function Expression
+    console.log(this); // вказує на функцію
+}
 
-            delete this[this.length - 1];
+test2();
 
-            this.length--;
+const arrow = () => { // Arrow Function не мают свого контексту виконання
+    console.log(this); // this вказую на глобаьний об'єкт Window
+}
 
-            return lastItem;
-        }
-    }, 
-    this.forEach = function(callback) {
-        for(let i = 0; i < this.length; i++) {
-            callback(this[i], i, this);
-        }
+arrow();
+
+function sum() {
+    const arrow = () => { // Arrow Function не мают свого контексту виконання
+        console.log(this); // this вказую на глобаьний об'єкт Window
     }
 }
 
-MyArray.prototype = new MyProtoArray;
-
-// __proto__ - літеральнея
-
-/*
-
-const cat = {
-
-}
-
-*/
-
-const arr = new MyArray();
-
-// arr.push(3, 5, 9, 10, 11, 2);
-
-// arr.forEach((item) => {
-//     console.log(item)
-// })
-
-// praktika
-
-function Stairs() {
-    this.currentStair = 0;
-}
-
-function ProtoStairs() {
-    this.up = function() {
-        this.currentStair++;
-    }
-
-    this.down = function() {
-        if (this.currentStair > 0) {
-            this.currentStair--;
-        }
-    }
-
-    this.showStair = function() {
-        return this.currentStair;
-    }
-}
-
-Stairs.prototype = new ProtoStairs;
-
-const st = new Stairs();
+sum();
