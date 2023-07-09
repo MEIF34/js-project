@@ -1,31 +1,34 @@
 'use strict';
 
-console.log(this); // this вказує на глобальний об'єкт Window
-
-// Контекст виконання
-
-function test() { // Function Declaration
-    console.log(this); // вказує на функцію
-}
-
-test();
-
-const test2 = function() { // Function Expression
-    console.log(this); // вказує на функцію
-}
-
-test2();
-
-const arrow = () => { // Arrow Function не мают свого контексту виконання
-    console.log(this); // this вказую на глобаьний об'єкт Window
-}
-
-arrow();
-
-function sum() {
-    const arrow = () => { // Arrow Function не мают свого контексту виконання
-        console.log(this); // this вказую на глобаьний об'єкт Window
+const newspaper = {
+    title: 'Назва',
+    articles: [
+        {
+            author: '1 author',
+            date: '09.06.2023',
+            text: 'lorem'
+        },
+        {
+            author: '2 author',
+            date: '09.06.2023',
+            text: 'lorem2'
+        },
+        {
+            author: '3 author',
+            date: '09.06.2023',
+            text: 'lorem3'
+        },
+        {
+            author: '4 author',
+            date: '09.06.2023',
+            text: 'lorem4'
+        },
+    ],
+    showArticles: function() {
+        this.articles.forEach((article, index) => {
+            console.log(`${this.title}: ${index} - ${article.author}`); // втрата контексту this
+        })
     }
 }
 
-sum();
+newspaper.showArticles();
