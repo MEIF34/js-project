@@ -1,148 +1,51 @@
-//task1
+function MyArray() {
+    this.length = 0;
 
-const users = [
-    {
-    name: 'John',
-    lastName: 'Doe',
-    age: 18,
-    email: 'meil@com'
-    },
-    {
-    name: 'Jane',
-    lastName: 'Doe',
-    age: 20,
-    email: 'meil@com'
-    },
-    {
-    name: 'Josh',
-    lastName: 'Doe',
-    age: 17,
-    email: 'meil@com'
-    },
-    {
-    name: 'Jake',
-    lastName: 'Doe',
-    age: 21,
-    email: 'meil@com'
-    },
-    {
-    name: 'Jackson',
-    lastName: 'Doe',
-    age: 17,
-    email: 'meil@com'
-    },
-]
+    //push
+    this.push = function(value) {
+        //v1
+        /*
+        this[this.length] = value; //this[key] = value
+        this.length++;
 
-const newUsers = users.map((user) => {
-    if(user.age >= 18) {
-        return {
-            fullname: `${user.name} ${user.lastName}`,
-            age: user.age,
-            email: user.email
+        return this.length;
+        */
+
+        //v2
+        for(let i = 0; i < arguments.length; i++) {
+            this[this.length] = arguments[i];
+            this.length++;
+        }
+
+        return this.length;
+    }
+
+    //pop
+    this.pop = function() {
+        if(this.length > 0) {
+            let lastItem = this[this.length - 1];
+
+            delete this[this.length - 1];
+
+            this.length--;
+
+            return lastItem;
         }
     }
-}).filter((user) => {
-    if(typeof user === 'object') {
-        return true;
-    } else {
-        return false;
+
+    // forEach
+    this.forEach = function(callback) {
+        for(let i = 0; i < this.length; i++) {
+            callback(this[i], i, this);
+        }
     }
+}
+
+const arr = new MyArray();
+
+arr.push(3, 5, 9, 10, 11, 2);
+
+arr.forEach((item) => {
+    console.log(item)
 })
 
-console.log(newUsers);
-
-//task 2
-
-const number = [1, 80, 41, 2, 92];
-
-number.sort((a, b) => {
-    if (b > a) {
-        return 1;
-    } else {
-        return -1;
-    }
-});
-
-console.log(number);
-
-//task 3
-
-const doubleNumbers = [27, 22, 2, 27, 45];
-
-const newDoubleNumbers = doubleNumbers.filter((elem) => {
-    if(elem % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
-});
-
-console.log(newDoubleNumbers);
-
-//task 4
-
-const number2 = [24, 21, 89, 20, 13];
-
-const sum = number2.reduce((accumulator, currentValue) => {
-    if(currentValue % 2 === 0) {
-        accumulator = accumulator + currentValue;
-    }
-
-    return accumulator;
-}, 0);
-
-console.log(`sum = ${sum}`);
-
-// task 5
-
-const catArray = [
-    {
-        name: 'Murzik',
-        color: 'black',
-        weight: 3,
-        age: 2
-    },
-    {
-        name: 'Murka',
-        color: 'grey',
-        weight: 5,
-        age: 3
-    },
-    {
-        name: 'Barsik',
-        color: 'red',
-        weight: 2,
-        age: 1
-    },
-    {
-        name: 'Cookie',
-        color: 'brown',
-        weight: 5,
-        age: 2
-    },
-    {
-        name: 'Stus',
-        color: 'grey',
-        weight: 2,
-        age: 5
-    },
-    {
-        name: 'Fagot',
-        color: 'black',
-        weight: 5,
-        age: 3
-    },
-    {
-        name: 'Kit',
-        color: 'pink',
-        weight: 2,
-        age: 1
-    },
-
-];
-
-const newCatArray = catArray.map((catName) => {
-    return catName.name;
-});
-
-console.log(newCatArray);
