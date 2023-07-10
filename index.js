@@ -1,22 +1,22 @@
 /*
 
-Задача:
+// task - doubleloop
 
-Вивести на консоль таблицю множення від 1 до 5, у вигляді:
+const numbersss = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
-1х1 = 1
-1х2 = 2
-
-...
-
-*/
-
-
-for(let i = 1; i <= 5; i++) {
-    for(let j = 1; j <= 5; j++) {
-        console.log(`${i} x ${j} = ${i * j}`);
+function ppNp(array) {
+    for(let i = 0; i < array.length; i++) {
+            for(let j = 0; j < array.length; j++) {
+                if (i % 2 === 0) {
+                    return array[[i][j]];
+                }
+            }
     }
-};
+}
+
+console.log(ppNp(numbersss));
+
+//
 
 const number = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
@@ -34,14 +34,52 @@ function sumArray(array) {
 
 console.log(sumArray(number));
 
-// task - spread
+*/
 
-const arr1 = [1, 2, 3, 4, 5];
-const arr2 = [10, 11, 12, 13, 14, 15];
-const arr3 = [...arr1, ...arr2];
+// practice-task-REST-1
 
-console.log(arr3);
+function rest (...arrayOfRestArguments) {
+    console.log(arrayOfRestArguments);
 
+}
 
+// practice-task-REST-2
 
+function rest2 (...arrayOfRestArguments) {
+    return Math.max(...arrayOfRestArguments);
+}
 
+// practice-task-SPREAD-3
+
+const obj1 = {
+    name: 'QQQ',
+    age: 404,
+    color: 'red'
+}
+
+const obj2 = {
+    name2: 'WWW',
+    age2: 7,
+    color2: 'green'
+}
+
+const obj3 = {
+    ...obj1,
+    ...obj2
+}
+
+// practice-task-REST-4
+
+// ???
+
+// practice-task-REST-SPREAD-5
+
+function rest5 (array, ...rest) {
+    const arrRest = [...rest];
+    const arr = [...array, ...arrRest];
+    return arr;
+}
+
+//practice-task-6
+
+// ???
