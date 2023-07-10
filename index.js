@@ -33,3 +33,15 @@ function sumArray(array) {
 }
 
 console.log(sumArray(number));
+
+// task - spread
+
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [10, 11, 12, 13, 14, 15];
+const arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
+
+
+
+
