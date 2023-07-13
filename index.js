@@ -1,85 +1,33 @@
-/*
+/* 
 
-// task - doubleloop
+Задача:
+Написати функцыю, яка робить кожне слово у переданому рядку з великої літери
 
-const numbersss = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+('test testovich'); // Test Tetovich
 
-function ppNp(array) {
-    for(let i = 0; i < array.length; i++) {
-            for(let j = 0; j < array.length; j++) {
-                if (i % 2 === 0) {
-                    return array[[i][j]];
-                }
-            }
-    }
-}
+Декомпозиція:
 
-console.log(ppNp(numbersss));
-
-//
-
-const number = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-
-function sumArray(array) {
-    let sum = 0;
-
-    for(let i = 0; i < array.length; i++) {
-        for(let j = 0; j < array[i].length; j++) {
-            sum += array[i][j];
-        }
-    }
-
-    return sum;
-}
-
-console.log(sumArray(number));
+1. Розділити рядок на слова (split)
+2. Зробити першу літеру кожного слова великою
+- пройтись циклом по кожному елемнту масиву слів
+- першу літеру слова (charAt) зробити великою буквою (toUpperCase)
+- використати метод slice(1) для отримання підрядку, що починается з другого символу слова
+- об'єднати першу велику літеру з рештою слоа, використовуючи оператор *
+3. З'єднати слова знову в рядок
+- використати метод join('') для з'єднання слів масиву в один рядок, розділенних пробілом
+4. Повернути новий рядок з великими літерами слів
 
 */
 
-// practice-task-REST-1
+function capitalizeWords(str) {
+    const words = str.split(' ');
 
-function rest (...arrayOfRestArguments) {
-    console.log(arrayOfRestArguments);
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
 
+    return words.join(' ');
 }
 
-// practice-task-REST-2
-
-function rest2 (...arrayOfRestArguments) {
-    return Math.max(...arrayOfRestArguments);
-}
-
-// practice-task-SPREAD-3
-
-const obj1 = {
-    name: 'QQQ',
-    age: 404,
-    color: 'red'
-}
-
-const obj2 = {
-    name2: 'WWW',
-    age2: 7,
-    color2: 'green'
-}
-
-const obj3 = {
-    ...obj1,
-    ...obj2
-}
-
-// practice-task-REST-4
-
-// ???
-
-// practice-task-REST-SPREAD-5
-
-function rest5 (array, ...rest) {
-    const arrRest = [...rest];
-    const arr = [...array, ...arrRest];
-    return arr;
-}
-
-//practice-task-6
-
-// ???
+// capitalizeWords('hello worl 1113')
+// 'Hello Worl 1113'
