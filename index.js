@@ -59,6 +59,8 @@ function checkSpam(str) {
 
 */
 
+// v1
+
 function palindrom(str) {
     str = str.toLowerCase(); // усі букви робимо у нижньому регістрі
 
@@ -72,4 +74,12 @@ function palindrom(str) {
     const reverseStr = newArr.join(''); // об'єднаємо всі елементи для формування нової строки
 
     return str === reverseStr;
+}
+
+// v2
+
+function isPalindrom(str) {
+    str = str.toLowerCase();
+
+    return str.split('').reverse().join('') === str;
 }
