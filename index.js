@@ -1,33 +1,75 @@
-/* 
+/*
 
-Задача:
-Написати функцыю, яка робить кожне слово у переданому рядку з великої літери
+Написати функцію truncate, яка приймає в якості аргументів рядок (str) і довжину (strLength).
 
-('test testovich'); // Test Tetovich
+Якщо довжина > strLength, то врізати рядок до цієї довжини і в кінці додати "...".
 
-Декомпозиція:
+Якщо рядок менший, то нічого не робити.
 
-1. Розділити рядок на слова (split)
-2. Зробити першу літеру кожного слова великою
-- пройтись циклом по кожному елемнту масиву слів
-- першу літеру слова (charAt) зробити великою буквою (toUpperCase)
-- використати метод slice(1) для отримання підрядку, що починается з другого символу слова
-- об'єднати першу велику літеру з рештою слоа, використовуючи оператор *
-3. З'єднати слова знову в рядок
-- використати метод join('') для з'єднання слів масиву в один рядок, розділенних пробілом
-4. Повернути новий рядок з великими літерами слів
+Приклади роботи функції:
+
+truncate('hello', 2); // 'he...'
+truncate('hello', 10); // 'hello'
 
 */
 
-function capitalizeWords(str) {
-    const words = str.split(' ');
-
-    for (let i = 0; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+function truncate(str, strLength) {
+    if (str.length > strLength) {
+        str = str.slice(0, strLength);
+        str = str.concat('...');
     }
 
-    return words.join(' ');
+    return str;
 }
 
-// capitalizeWords('hello worl 1113')
-// 'Hello Worl 1113'
+/*
+
+Написати функцію checkSpam, яка повертає true, якщо переданий рядок містить слова 'xxx' або 'viagra', інакше 'false'
+
+Приклади роботи функції:
+
+checkSpam('buy ViAgRa now'); // true
+checkSpam('free xxxxxx'); // true
+checkSpam('innocent rabbit'); // false
+
+*/
+
+function checkSpam(str) {
+    const newStr = str.toLowerCase();
+
+    if (newStr.includes('xxx', 'viagra')) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
+
+/*
+
+Написати функію, яка перевіряє, чи є переданий рядок паліндромом. При тому, функція має працювати таким чином, що вона не повинна зважати на регістр.
+
+Довідка.
+Паліндром - це коли рядок з обох сторін читається однаково.
+
+Приклади.
+'Anna' - паліндром
+'Mama' - не паліндром
+'Namman' - паліндром
+'2002' - паліндром
+
+*/
+
+function palindrom(str) {
+    str = str.toLowerCase(); // усі букви робимо у нижньому регістрі
+
+    const strArr = [...str]; // додаємо змінену строку в масив
+    const newArr = [];
+
+    strArr.forEach(index => { // перебираємо кожен індекс масиву
+        newArr.unshift(index); // добавляем елементи в початок newArr
+    });
+
+    const reverseStr = newArr.join(''); // об'єднаємо всі елементи для формування нової строки
+
+    return str === reverseStr;
+}
